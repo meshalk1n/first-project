@@ -47,6 +47,8 @@ public class MySpringMvcDispatcherSerlvetIntitializer extends AbstractAnnotation
      обрабатывать запросы с использованием методов, таких как PUT, DELETE, PATCH и т.д.,
      */
     private void registerHiddenFieldFilter(ServletContext aContext) {
+        aContext.setRequestCharacterEncoding("UTF-8");
+        aContext.setResponseCharacterEncoding("UTF-8");
         aContext.addFilter("hiddenHttpMethodFilter",
                 new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null ,true, "/*");
     }

@@ -33,7 +33,7 @@ public class PersonController {
     @PostMapping()
     public String saveNewPerson(@ModelAttribute("person") Person person){
         personDAO.addPerson(person);
-        return "redirect:/people";
+        return "redirect:/people/";
     }
     @GetMapping("/{id}/edit")
     public String showEditForm(Model model, @PathVariable("id") int id){
@@ -43,12 +43,12 @@ public class PersonController {
     @PatchMapping("/{id}")
     public String processEditForm(@ModelAttribute("person") Person person, @PathVariable("id") int id){
         personDAO.updatedPerson(id,person);
-        return "redirect:/people";
+        return "redirect:/people/";
     }
     @DeleteMapping("/{id}")
     public String deletePerson(@PathVariable("id") int id){
         personDAO.deletePerson(id);
-        return "redirect:/people";
+        return "redirect:/people/";
     }
 }
 

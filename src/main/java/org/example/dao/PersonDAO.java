@@ -25,6 +25,7 @@ public class PersonDAO {
         Person personToBeUpdated = getPersonById(id);
         personToBeUpdated.setName(updatedPersonData.getName());
         personToBeUpdated.setAge(updatedPersonData.getAge());
+        personToBeUpdated.setComment(updatedPersonData.getComment());
     }
     public void deletePerson(int id){
         for(int i = 0; i < people.size(); i++) {
